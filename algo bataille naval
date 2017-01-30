@@ -1,0 +1,87 @@
+//algo bataille naval
+//BUT:faire une bataille naval
+//ENTRER: 
+//SORTIE:
+
+const
+	MAX: 5								//taiile de la grille
+	LONG:5								//longueur max des bateau et nombre de bateau
+
+Type case=ENREGISTREMENT				//type des case
+		i,j: ENTIER						//coordonnée de  case
+		nomcase: CHARACTERE				//noms case
+	FINENREGISTREMENT
+
+TYPE BATEAU=ENREGISTREMENT				//Types des bateaux
+		TAILLE: case					//taille des bateau
+		nombateau: CARACTERE			//noms des bateau
+
+	FINENREGISTREMENT
+TYPE FLOTTE=ENREGISTREMENT				//types de la flotte
+		nbflotte: ENTIER				//nombre de bateau dans la flotte
+	FINENREGISTREMENT
+
+TYPE
+
+	tabbat=Tableau[1..LONG] de case					//tableau de bateau
+	tabflotte=Tableau[1..MAX] de BATEAU 				//tableau de tous les bateaux
+
+PROCEDURE creecase(var case:i,j;var case:nomcase)		//création grille
+
+DEBUT
+	POUR i de 1 a MAX FAIRE
+	debut
+		POUR j de 1 a MAX FAIRE
+		debut
+			case.nomcase<-' '							//on remplit de la grille de ' '
+		finpour
+	finpour
+FIN
+
+PROCEDURE creebat(var bateau: TAILLE;var bateau:nombat;var n:entier)	//création de bateau
+VAR
+	nbcase,n:ENTIER
+DEBUT
+	POUR n de 1 a LONG FAIRE
+		ECRIRE" entrer la taille du bateau "& n 				//entrer taille bateau
+		LIRE nbcase
+		bateau.TAILLE<- nbcase*creecase 				//affectation taille du bateau
+		bateau.nombat<-'B'					// on remplit avec B pour montrer le bateau
+		nomcase<-nombat 					//on remplace le ' ' par B
+	finpour
+	n<-LONG
+FIN
+
+FONCTION testcase(i,j:ENTIER):booleen
+VAR
+	test:booleen
+DEBUT
+	test<-FAUX
+	SI case.i.J.nomcase=' ' ALORS
+		test<-VRAI
+	testcase<-test
+FIN
+
+FONCTION testbat(testcase:booleen):booleen
+VAR
+	test:booleen
+DEBUT
+	test<-faux
+	SI testcase=FAUX ALORS
+		test<-VRAI
+	testbat<-test
+FIN
+
+VAR
+	i,j:integer
+DEBUT
+	creecases(ceses,nomcases)
+	creebat(bateau,n)
+	testcases(i,j)
+	testbat(testcases)
+	si testcases=VRAI ALORS
+		ECRIRE"rater"
+	SI testbat=VRAI ALORS
+		ECRIRE"Toucher"
+
+FIN
